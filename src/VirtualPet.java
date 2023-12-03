@@ -74,19 +74,19 @@ public void setBoredLevel(int boredLevel) {
 //! Methods ---------------------------------------------------------------
 
 public void petHungryDead(){
-    if(this.hungerLevel > 100){
+    if(this.hungerLevel >= 100){
         System.out.println(this.petName + " has starved to death");
         System.exit(0);
     }
 }
 public void petThirstyDead(){
-    if(this.thirstLevel > 100){
+    if(this.thirstLevel >= 100){
         System.out.println(this.petName + " has died of Thirst");
         System.exit(0);
     }
 }
 public void petLeftBored(){
-    if(this.boredLevel > 100){
+    if(this.boredLevel >= 100){
         System.out.println(this.petName + " Chewed through the door and left for a more active life!");
         System.exit(0);
     }
@@ -132,7 +132,7 @@ public void petStats(){
 public void play(){
     hungerLevel += 20;
     thirstLevel += 30;
-    boredLevel -= 50;
+    boredLevel -= 40;
     petHungry();
     petThirsty();
     petBoredom();
@@ -141,8 +141,8 @@ public void play(){
 
 public void feed(){
     hungerLevel -= 50;
-    thirstLevel -= 10;
-    boredLevel += 10;
+    thirstLevel += 10;
+    boredLevel -= 10;
     petHungry();
     petThirsty();
     petBoredom();
@@ -171,13 +171,14 @@ public void noNegative(){
 }
 
 public void tick(){
-    hungerLevel += 5;
-    thirstLevel += 5;
-    boredLevel += 10;
+    hungerLevel += 10;
+    thirstLevel += 10;
+    boredLevel += 20;
     petHungry();
     petThirsty();
     petBoredom();
     petStats();
+    System.out.println(" ");
     petHungryDead();
     petThirstyDead();
     petLeftBored();

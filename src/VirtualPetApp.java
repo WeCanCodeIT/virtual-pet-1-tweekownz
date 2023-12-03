@@ -20,18 +20,24 @@ public class VirtualPetApp {
 
         switch (userChoice) {
             case 1:
+                System.out.println(" ");
                 pet1.feed();
                 break;
             case 2:
                 pet1.water();
+                System.out.println(" ");
                 break;
             case 3:
                 pet1.play();
+                System.out.println(" ");
                 break;
             case 4:
+                System.out.println(" ");
                 break;
             case 5:
-                System.out.println("Oh no my feeling!");
+                System.out.println( " ");
+                System.out.println("Oh no my feelings!");
+                System.out.println(" ");
                 break;
             default:
                     System.out.print("Please enter a valid selection: 1 = Feed, 2 = Water, 3 = Play, 4 = Do nothing, 5 = Don't leave me");
@@ -39,15 +45,6 @@ public class VirtualPetApp {
         }
         pet1.tick();
             } while (userChoice != 5);
-
-
-        
-
-
-
-
-
-
 
         scanner.close();
     }
